@@ -5,10 +5,11 @@ import { Button } from "keep-react";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import UseCarts from "../Hooks/UseCarts";
-import UseAdmin from "../Hooks/UseAdmin";
+
 
 const NavBar = () => {
   const {user, logOut} = useContext(AuthContext);
+  const [cart] = UseCarts();
   const handleLogOUt = () =>{
     logOut().then().catch(error=>{console.error(error)})
   }
